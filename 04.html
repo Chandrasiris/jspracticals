@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <p id="01">My para</p>        
+                <input name="i" type="radio" onclick="xy(2)"> 2X <br>
+                <input name="i" type="radio" onclick="xy(3)"> 3X <br>
+                <input name="i" type="radio" onclick="xy(.5)"> .5X <br>
+                <input name="i" type="radio" onclick="xy(1)"> Regular           
+        <script>          
+           function xy(val){                    
+                    var size = val + "em";                    
+                    document.getElementById("01").style.fontSize=size;                
+           } 
+        </script>
+    </body>
+</html>

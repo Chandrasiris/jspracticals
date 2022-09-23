@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>a,e,i,o,u are...</p> 
+    <hr>   
+    <input name="i" id="1" type="radio" > Vowels <span name="s" id="11"></span> <br>
+    <input name="i" id="2" type="radio"> Consonents <span name="s" id="22"></span><br>
+    <input name="i" id="3" type="radio" > English lowercase letters <span name="s" id="33"></span><br>
+    <input name="i" id="4" type="radio" > Nothing <span name="s" id="44"></span><br>
+    <button onclick="xy()">Evaluate</button>
+    <script>
+        function xy(){
+            clear(); //Clear all answers
+            var answerIds = ["1","3"];
+            var elements = document.getElementsByName('i');
+            for(var item=0; item<elements.length; item++){                
+                var id = elements[item].id;                               
+                if(document.getElementById(id).checked){
+                    if(id == answerIds[0] || id == answerIds[1]) {
+                    document.getElementById(id+id).innerHTML=" - Correct";
+                    document.getElementById(id+id).style.backgroundColor='lightgreen';
+                    }
+                    else {
+                        document.getElementById(id+id).innerHTML=" - Incorrect";
+                        document.getElementById(id+id).style.backgroundColor='#dd0055';
+                    }
+                }
+            }
+        }
+    function clear(){
+        for(var item of document.getElementsByName("s"))
+        {
+            document.getElementById(item.id).innerHTML="";
+            document.getElementById(item.id).style.backgroundColor="white";
+        }
+    }
+    </script>
+</body>
+</html>

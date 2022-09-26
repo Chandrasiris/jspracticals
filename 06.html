@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dv{  
+            display: inline-block;
+            vertical-align: middle;            
+            height: 60px;
+            width: 90px;              
+            background-color: green;
+            border: 3px solid rgb(136, 145, 136);         
+            
+        }
+        .ab{
+            text-align: center;
+        }
+        h1{text-align: center;}
+    </style>
+</head>
+<body>
+    <h1 id="h1"> </h1>
+    <div class="ab">
+        <div class="dv" id="10" >10% <br> Mouse over</div>
+        <div class="dv" id="15">15% <br> Mouse click</div>
+        <div class="dv" id="22">22%</div>
+    </div>
+    <script>
+        var dis10 = document.getElementById("10");
+        var dis15 = document.getElementById("15");
+        var dis22 = document.getElementById("22");
+        var dis = document.getElementById('h1');
+        var price = 1500;        
+        dis10.addEventListener('mouseover',function(){           
+            dis.innerHTML=`Discount : ${price*.1}`;
+            dis10.style.backgroundColor='yellow';
+            dis15.style.backgroundColor='green';
+        });      
+        dis15.addEventListener('click',function(){
+            dis.innerHTML=`Discount: ${price*.15}`;
+            dis10.style.backgroundColor='green';
+            dis15.style.backgroundColor='yellow';
+        });
+
+    </script>
+</body>
+</html>

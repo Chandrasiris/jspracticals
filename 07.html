@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="Res/images/image2.jpg" id="img" > <br>
+    <a href="#" id="next">Next</a>
+    <script>
+        "strict"
+        var images = ['image2.jpg','image3.jpg','image4.jpg','image5.jpg'];
+        var currentIndex = 0;
+        document.getElementById('next').onclick = nextImage;
+        function nextImage(){
+            currentIndex++;
+            if(currentIndex < images.length){                
+              // document.getElementById('img').src = 'Res/images/'+images[currentIndex];
+                let img = document.getElementById('img');
+                img.setAttribute('src','Res/images/'+images[currentIndex]);
+            }
+            else{currentIndex = 0;}
+        }
+    </script>
+</body>
+</html>
